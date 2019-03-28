@@ -1,3 +1,7 @@
+This is a React.js project made at AltCampus. The data for the Pokedex app is taken from the same source of original Pokedex application:
+
+https://alik0211.github.io/pokedex/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
