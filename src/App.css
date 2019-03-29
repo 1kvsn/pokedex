@@ -1,20 +1,18 @@
 .container-super {
-	max-width: 1400px;
+	background-color: lightgray;
+}
+
+.container-super input {
+	width: 400px;
+	padding: 25px;
+}
+
+.header-container {
 	width: 100%;
-	margin: 0 auto;
-	box-shadow: 0 0 9px 9px rgba(255, 228, 225, 0.89);
-	
-}
-
-.poke-flex {
-	width: 200px;
-	height: 200px;
-	/* display: flex;
-	justify-content: center; */
-
-}
-
-.poke {
+	text-align: center;
 	border: 1px solid;
-	/* box-shadow: 0 0 0 2px rgba(255, 228, 225, 0.89); */
+	background:linear-gradient(135deg, #23aa8a 0%,#b8efc5 100%);
 }
+
+
+/* background:linear-gradient(135deg, #fab8ce 0%,#a9e8f3 100%); */

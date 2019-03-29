@@ -11,6 +11,11 @@ class Parent extends Component {
       filtered: [],
     }
   }
+  imageIndex(string) {
+    var newUse = string.split('/')
+  console.log(newUse);
+    return newUse[newUse.length-2];
+  }
 
   componentDidMount = () => {
     console.log('component did mount');
@@ -41,11 +46,16 @@ class Parent extends Component {
     // console.log(this.state);
     return (
       <div className="container-super">
-        <input onChange={this.handleChange} type='text' placeholder='Search Pokes...' />
+        <div className="header-container">
+          <h1>Pokeverse</h1>
+          <input onChange={this.handleChange} type='text' placeholder='Search Pokes...' />
+          
+        </div>
+
         <div className="poke-flex">
           {
             this.state.pokes.map((poke, index) => {
-              const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`
+              const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.imageIndex(poke.url)}.png`
               return (
                 <div className="poke">
                   <img src={url} alt="pokemon" width="120px" height="120px"/>
@@ -62,20 +72,23 @@ class Parent extends Component {
   renderFiltered() {
     return (
       <div className="container-super">
-        <input onChange={this.handleChange} type='text' placeholder='Search Pokes...' />
-        <div className="poke-flex">
-          {
-            this.state.filtered.map((poke, index) => {
-              const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`
-              return (
-                <div className="poke">
-                  <img src={url} alt="pokemon" width="120px" height="120px"/>
-                  <p>{poke.name}</p>
-                </div>
-              )
-            })
-          }
+        <div className="header-container">
+          <h1>Pokeverse</h1>
+          <input onChange={this.handleChange} type='text' placeholder='Search Pokes...' />
         </div>
+          <div className="poke-flex">
+            {
+              this.state.filtered.map((poke, index) => {
+                const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.imageIndex(poke.url)}.png`
+                return (
+                  <div className="poke">
+                    <img src={url} alt="pokemon" width="120px" height="120px"/>
+                    <p>{poke.name}</p>
+                  </div>
+                )
+              })
+            }
+          </div>
       </div>
     )
   }
