@@ -1,11 +1,31 @@
+/* Pokeverse...made by GitHub User @1kvsn */
+
 .container-super {
 	background-color: white;
+	position: relative;
 }
 
-.container-super input {
+/* Header Container Styles */
+.header-container {
+	width: 100%;
+	text-align: center;
+	background:linear-gradient(135deg, #23aa8a 0%,#b8efc5 100%);
+	position: fixed;
+	top: 0;
+	z-index: 1;
+}
+.header-container h1 {
+	margin: 0;
+	padding: 20px;
+	letter-spacing: 1.5px;
+	font-style: bold;
+	font-size: 32px;
+}
+/* Input Box Styles */
+.header-container input {
 	max-width: 500px;
 	width: 75%;
-	padding: 25px;
+	padding: 20px;
 	border: none;
 	border-radius: 10px;
 	font-size: 18px;
@@ -13,30 +33,17 @@
 	margin: 10px;
 }
 
-
-.header-container {
-	width: 100%;
-	text-align: center;
-	background:linear-gradient(135deg, #23aa8a 0%,#b8efc5 100%);
-}
-.header-container h1 {
-	margin: 0;
-	padding: 25px;
-	letter-spacing: 1.5px;
-	font-style: bold;
-	font-size: 32px;
-}
-
+/* Pokemon Card Container */
 .poke-flex {
 	display: flex;
 	max-width: 1400px;
 	width: 100%;
-	margin: 50px auto;
+	margin: 180px auto;
 	flex-wrap: wrap;
 	justify-content: center;
-	
 }
 
+/* Each Pokemon box styles */
 .poke {
 	width: 200px;
 	height: 190px;
@@ -50,6 +57,7 @@
 	box-shadow:0 70px 90px rgba(0, 0, 0, 0.1), 0 100px 100px rgba(0, 0, 0, 0.05);
 }
 
+/* Pokemon Name Styles */
 .poke p {
 	position: absolute;
 	bottom: 0%;
@@ -58,6 +66,7 @@
 	letter-spacing: 1px;
 }
 
+/* Pokemon Image Styles */
 .pic {
 	width: 180px;
 	height: 180px;

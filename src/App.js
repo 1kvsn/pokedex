@@ -13,13 +13,11 @@ class Parent extends Component {
   }
   imageIndex(string) {
     var newUse = string.split('/')
-  console.log(newUse);
     return newUse[newUse.length-2];
   }
 
   componentDidMount = () => {
-    console.log('component did mount');
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=40").then(res => res.json()).then(data => this.setState({pokes: data.results}))
+    fetch("https://pokeapi.co/api/v2/pokemon/?limit=20").then(res => res.json()).then(data => this.setState({pokes: data.results}))
   }
 
   handleChange = (e) =>  {
@@ -29,15 +27,12 @@ class Parent extends Component {
     this.setState({
       filtered: arr,
     })
-    console.log(arr,this.state, 'check');
   }
 
   render() {
     if(this.state.filtered.length === 0) {
-      console.log('ALL')
       return this.renderAll();
     } else {
-      console.log('showing filtered')
       return this.renderFiltered();
     }
   }
@@ -96,7 +91,8 @@ class Parent extends Component {
 
 export default Parent;
 
-
+//Pokemon API link
 // https://pokeapi.co/api/v2/pokemon/?limit=100
 
+//Pokemon Image Link
 // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
