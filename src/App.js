@@ -49,7 +49,6 @@ class Parent extends Component {
         <div className="header-container">
           <h1>Pokeverse</h1>
           <input onChange={this.handleChange} type='text' placeholder='Search Pokes...' />
-          
         </div>
 
         <div className="poke-flex">
@@ -58,7 +57,7 @@ class Parent extends Component {
               const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.imageIndex(poke.url)}.png`
               return (
                 <div className="poke">
-                  <img src={url} alt="pokemon" width="120px" height="120px"/>
+                  <img className="pic" src={url} alt="pokemon" />
                   <p>{poke.name}</p>
                 </div>
               )
@@ -90,6 +89,7 @@ class Parent extends Component {
             }
           </div>
       </div>
+      
     )
   }
 }
