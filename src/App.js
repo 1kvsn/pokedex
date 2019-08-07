@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+
 import './App.css';
 
 class Parent extends Component {
-  constructor() {
-    super()
-    this.state = {
-      pokes: [],
-      images: [],
-      userSearch: "",
-      filtered: [],
-    }
+
+  state = {
+    pokes: [],
+    images: [],
+    userSearch: "",
+    filtered: [],
   }
+
   imageIndex(string) {
     var newUse = string.split('/')
     return newUse[newUse.length-2];
@@ -51,7 +51,7 @@ class Parent extends Component {
             this.state.pokes.map((poke, index) => {
               const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.imageIndex(poke.url)}.png`
               return (
-                <div className="poke">
+                <div className="poke" key={index}>
                   <img className="pic" src={url} alt="pokemon" />
                   <p>{poke.name}</p>
                 </div>
@@ -70,19 +70,19 @@ class Parent extends Component {
           <h1>Pokeverse</h1>
           <input onChange={this.handleChange} type='text' placeholder='Search Pokes...' />
         </div>
-          <div className="poke-flex">
-            {
-              this.state.filtered.map((poke, index) => {
-                const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.imageIndex(poke.url)}.png`
-                return (
-                  <div className="poke">
-                    <img src={url} alt="pokemon" width="120px" height="120px"/>
-                    <p>{poke.name}</p>
-                  </div>
-                )
-              })
-            }
-          </div>
+        <div className="poke-flex">
+          {
+            this.state.filtered.map((poke, index) => {
+              const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.imageIndex(poke.url)}.png`
+              return (
+                <div className="poke" key={index}>
+                  <img className="pic" src={url} alt="pokemon" width="120px" height="120px"/>
+                  <p>{poke.name}</p>
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
       
     )
@@ -90,9 +90,3 @@ class Parent extends Component {
 }
 
 export default Parent;
-
-//Pokemon API link
-// https://pokeapi.co/api/v2/pokemon/?limit=100
-
-//Pokemon Image Link
-// https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
