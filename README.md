@@ -1,6 +1,6 @@
-This is a React.js project made at AltCampus. The data for the Pokedex app is taken from the same source of original Pokedex application:
+This is a React.js project made at AltCampus. The data for the Pokedex app is taken from the Pokedex API.
 
-https://alik0211.github.io/pokedex/
+This project is Live at: https://pokeverse.netlify.com/
 
 ## Features
 * Search any Pokemon by their name.
