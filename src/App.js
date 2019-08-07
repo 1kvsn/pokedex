@@ -17,7 +17,7 @@ class Parent extends Component {
   }
 
   componentDidMount = () => {
-    fetch("https://pokeapi.co/api/v2/pokemon/?limit=20").then(res => res.json()).then(data => this.setState({pokes: data.results}))
+    fetch("https://pokeapi.co/api/v2/pokemon/").then(res => res.json()).then(data => this.setState({pokes: data.results}))
   }
 
   handleChange = (e) =>  {
@@ -84,7 +84,6 @@ class Parent extends Component {
           }
         </div>
       </div>
-      
     )
   }
 }
